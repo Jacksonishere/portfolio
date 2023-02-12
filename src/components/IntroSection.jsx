@@ -230,32 +230,28 @@ const Intro = () => {
 					custom={{ bottom: ["30%", "33%"], delay: -0.3 }}
 					variants={floating}
 					className="absolute right-[12%] ">
-					<motion.div
-						initial="initial"
-						animate="inflate"
-						whileHover="hover"
-						variants={parentFloatingLink}
-						custom={1.2}
-						className="grid place-items-center">
-						<motion.div variants={floatingBg} className="absolute grid place-items-center">
-							<motion.div
-								variants={floatingBgHover}
-								className="absolute w-[70px] h-[70px] bg-red-400 rounded-full cursor-pointer"></motion.div>
-
-							<motion.div
-								variants={floatRing}
-								className="pointer-events-none absolute w-[275px] h-[275px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] border-solid rounded-full border-[1px]"
-							/>
+					<a target="_blank" rel="noopener noreferrer" href="mailto:lujackson355@gmail.com">
+						<motion.div
+							initial="initial"
+							animate="inflate"
+							whileHover="hover"
+							variants={parentFloatingLink}
+							custom={1.2}
+							className="grid place-items-center">
+							<motion.div variants={floatingBg} className="absolute grid place-items-center">
+								<motion.div
+									variants={floatingBgHover}
+									className="absolute w-[70px] h-[70px] bg-red-400 rounded-full cursor-pointer"></motion.div>
+								<motion.div
+									variants={floatRing}
+									className="pointer-events-none absolute w-[275px] h-[275px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] border-solid rounded-full border-[1px]"
+								/>
+							</motion.div>
+							<motion.span variants={floatingLink} className="relative">
+								<img className="max-w-[24px] md:max-w-[26px]" src={GmailIcon} alt="gmail-floating-icon" />
+							</motion.span>
 						</motion.div>
-						<motion.a
-							variants={floatingLink}
-							className="relative"
-							target="_blank"
-							rel="noopener noreferrer"
-							href="mailto:lujackson355@gmail.com">
-							<img className="max-w-[24px] md:max-w-[26px]" src={GmailIcon} alt="gmail-floating-icon" />
-						</motion.a>
-					</motion.div>
+					</a>
 				</motion.div>
 
 				<motion.div
@@ -265,36 +261,38 @@ const Intro = () => {
 					variants={floating}
 					custom={{ bottom: ["83%", "86%"], delay: 0.6 }}
 					className="absolute right-[37%]">
-					<motion.div
-						initial="initial"
-						animate="inflate"
-						whileHover="hover"
-						variants={parentFloatingLink}
-						custom={0.4}
-						className="grid place-items-center">
-						<motion.div variants={floatingBg} className="absolute grid place-items-center">
-							<motion.div
-								variants={floatRing}
-								className="pointer-events-none absolute -z-1 w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] border-solid rounded-full border-[1px]"
-							/>
-							<motion.div
-								variants={floatingBgHover}
-								className="absolute w-[70px] h-[70px] bg-purple-400 rounded-full cursor-pointer"></motion.div>
+					<a target="_blank" rel="noopener noreferrer" href="https://github.com/Jacksonishere">
+						<motion.div
+							initial="initial"
+							animate="inflate"
+							whileHover="hover"
+							variants={parentFloatingLink}
+							custom={0.4}
+							className="grid place-items-center">
+							<motion.div variants={floatingBg} className="absolute grid place-items-center">
+								<motion.div
+									variants={floatRing}
+									className="pointer-events-none absolute -z-1 w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] border-solid rounded-full border-[1px]"
+								/>
+								<motion.div
+									variants={floatingBgHover}
+									className="absolute w-[70px] h-[70px] bg-purple-400 rounded-full cursor-pointer"></motion.div>
+							</motion.div>
+							<motion.span
+								variants={floatingLink}
+								className="relative"
+								target="_blank"
+								href="https://github.com/Jacksonishere">
+								<img className="max-w-[24px] md:max-w-[26px]" src={GithubIcon} alt="github-floating-icon" />
+							</motion.span>
 						</motion.div>
-						<motion.a
-							variants={floatingLink}
-							className="relative"
-							target="_blank"
-							href="https://github.com/Jacksonishere">
-							<img className="max-w-[24px] md:max-w-[26px]" src={GithubIcon} alt="github-floating-icon" />
-						</motion.a>
-					</motion.div>
+					</a>
 				</motion.div>
 			</div>
 
 			<motion.div
 				id="titles"
-				className="absolute top-[45%] lg:top-[40%] inset-x-[4%] -translate-y-1/2 md:inset-x-[8%]"
+				className="absolute top-[47.5%] md:top-[42.5%]  inset-x-[4%] -translate-y-1/2 md:inset-x-[8%]"
 				variants={IntroVar}
 				initial="initial"
 				animate="animate">
@@ -388,7 +386,7 @@ const Intro = () => {
 
 const IntroSection = () => {
 	return (
-		<section data-scroll-section>
+		<section data-scroll-section data-scroll-id="intro">
 			<div className="relative mx-auto w-[88%] max-w-[1440px] h-[600px] md:h-[675px]">
 				<NavBar />
 				<Intro />

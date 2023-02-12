@@ -127,7 +127,7 @@ const opacityViewportVar = {
 
 const MyWork = () => {
 	return (
-		<section data-scroll-section>
+		<section data-scroll-section data-scroll-id="projects">
 			<div className="pt-[1px] pb-[5em] w-[90%] max-w-[1150px] mx-auto">
 				<h3 className="relative mt-[1.5em] mb-[3em] tracking-normal leading-[1.2] text-[2.25em] md:text-[clamp(2rem,_3vw,_2.3rem)] font-normal">
 					<motion.div

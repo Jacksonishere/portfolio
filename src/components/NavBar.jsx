@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 import GmailIcon from "../assets/icons/gmail.png";
 import CvIcon from "../assets/icons/cv.png";
@@ -69,6 +70,27 @@ const floatVar = {
 };
 
 const NavBar = () => {
+	const { scroll } = useLocomotiveScroll();
+	const [sections, setSections] = useState();
+
+	useEffect(() => {
+		if (!scroll) return;
+
+		const intro = document.querySelector('[data-scroll-id="intro"]');
+		const skills = document.querySelector('[data-scroll-id="skills"]');
+		const projects = document.querySelector('[data-scroll-id="projects"]');
+		setSections({
+			intro,
+			skills,
+			projects,
+		});
+	}, [scroll]);
+
+	const scrollTo = (sectionName) => {
+		scroll.scrollTo(sections[sectionName], {
+			duration: 500,
+		});
+	};
 	return (
 		<motion.ul
 			initial="initial"
@@ -76,14 +98,17 @@ const NavBar = () => {
 			variants={navDropVar}
 			className="relative z-10 flex-c text-[.9375rem] md:text-[1rem] ">
 			<motion.li whileHover="hover" variants={navLinkVar}>
-				<a href="google.com">Home</a>
+				<button onClick={() => scrollTo("intro")}>Home</button>
 			</motion.li>
 			<motion.li whileHover="hover" variants={navLinkVar} className="ml-auto">
-				<a href="google.com">Projects</a>
+				<button onClick={() => scrollTo("skills")}>Skills</button>
 			</motion.li>
 			<motion.li whileHover="hover" variants={navLinkVar} className="ml-8">
-				<a href="google.com">About Me</a>
+				<button onClick={() => scrollTo("projects")}>Projects</button>
 			</motion.li>
+			{/* <motion.li whileHover="hover" variants={navLinkVar} className="ml-8">
+				<button onClick={() => scrollTo("about-me")}>About me</button>
+			</motion.li> */}
 			<motion.li whileHover={["hover"]} animate="initial" className="relative ml-8">
 				<motion.div variants={navLinkVar} className="flex-c cursor-pointer">
 					<span className="mr-3">Connect</span>

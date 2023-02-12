@@ -180,7 +180,7 @@ const ToolSection = () => {
 	const [ref, { height }] = useMeasure();
 
 	return (
-		<section data-scroll-section className="relative grid place-items-center bg-asif">
+		<section data-scroll-section data-scroll-id="skills" className="relative grid place-items-center bg-asif">
 			<div className="mx-auto w-full max-w-[1200px] ">
 				<motion.div
 					initial="offscreen"

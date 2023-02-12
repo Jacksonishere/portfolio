@@ -22,7 +22,7 @@ const App = () => {
 			}}
 			watch={[]}
 			containerRef={containerRef}>
-			<main data-scroll-container ref={containerRef} className="mt-8">
+			<main data-scroll-container ref={containerRef} className="pt-8">
 				<IntroSection />
 				<ToolSection />
 				<MyWork />
