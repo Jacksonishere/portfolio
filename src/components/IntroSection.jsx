@@ -197,7 +197,7 @@ const Intro = () => {
 						bottom: ["22%", "25%"],
 					}}
 					variants={floating}
-					className="absolute left-[8%]">
+					className="absolute left-[8%] flex">
 					<a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/jacksonlu-dev/">
 						<motion.div
 							initial="initial"
@@ -205,11 +205,11 @@ const Intro = () => {
 							whileHover="hover"
 							variants={parentFloatingLink}
 							custom={0.8}
-							className="grid place-items-center">
+							className="relative grid place-items-center">
 							<motion.div variants={floatingBg} className="absolute grid place-items-center">
 								<motion.div
 									variants={floatingBgHover}
-									className="absolute w-[70px] h-[70px] bg-blue-400 rounded-full cursor-pointer"
+									className="absolute w-[4.5em] h-[4.5em] bg-blue-400 rounded-full cursor-pointer"
 								/>
 								<motion.div
 									variants={floatRing}
@@ -229,7 +229,7 @@ const Intro = () => {
 					animate="animate"
 					custom={{ bottom: ["30%", "33%"], delay: -0.3 }}
 					variants={floating}
-					className="absolute right-[12%] ">
+					className="absolute right-[12%] flex">
 					<a target="_blank" rel="noopener noreferrer" href="mailto:lujackson355@gmail.com">
 						<motion.div
 							initial="initial"
@@ -237,11 +237,11 @@ const Intro = () => {
 							whileHover="hover"
 							variants={parentFloatingLink}
 							custom={1.2}
-							className="grid place-items-center">
+							className="relative grid place-items-center">
 							<motion.div variants={floatingBg} className="absolute grid place-items-center">
 								<motion.div
 									variants={floatingBgHover}
-									className="absolute w-[70px] h-[70px] bg-red-400 rounded-full cursor-pointer"></motion.div>
+									className="absolute w-[4.5em] h-[4.5em] bg-red-400 rounded-full cursor-pointer"></motion.div>
 								<motion.div
 									variants={floatRing}
 									className="pointer-events-none absolute w-[275px] h-[275px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] border-solid rounded-full border-[1px]"
@@ -256,11 +256,11 @@ const Intro = () => {
 
 				<motion.div
 					id="github-float"
-					initial={"initial"}
+					initial="initial"
 					animate="animate"
 					variants={floating}
 					custom={{ bottom: ["83%", "86%"], delay: 0.6 }}
-					className="absolute right-[37%]">
+					className="absolute right-[37%] flex">
 					<a target="_blank" rel="noopener noreferrer" href="https://github.com/Jacksonishere">
 						<motion.div
 							initial="initial"
@@ -268,7 +268,7 @@ const Intro = () => {
 							whileHover="hover"
 							variants={parentFloatingLink}
 							custom={0.4}
-							className="grid place-items-center">
+							className="relative grid place-items-center">
 							<motion.div variants={floatingBg} className="absolute grid place-items-center">
 								<motion.div
 									variants={floatRing}
@@ -276,7 +276,7 @@ const Intro = () => {
 								/>
 								<motion.div
 									variants={floatingBgHover}
-									className="absolute w-[70px] h-[70px] bg-purple-400 rounded-full cursor-pointer"></motion.div>
+									className="absolute w-[4.5em] h-[4.5em] bg-purple-400 rounded-full cursor-pointer"></motion.div>
 							</motion.div>
 							<motion.span
 								variants={floatingLink}
@@ -296,25 +296,23 @@ const Intro = () => {
 				variants={IntroVar}
 				initial="initial"
 				animate="animate">
-				<motion.div className="line-wrap">
-					<motion.div
-						// initial="initial"
-						// animate="animate"
-						variants={nameRise}
-						className="mb-[.75em] line-wrap font-normal text-[1.375em] lg:text-[1.75em]">
-						<span className="">Hi, I&lsquo;m Jackson!</span>
-						<motion.span
-							className="inline-block ml-[.375rem] text-[1.125em]"
-							animate={{ rotate: [0, 20, 0] }}
-							transition={{
-								delay: 0.75,
-								repeat: 1,
-								ease: "easeInOut",
-								duration: 0.4,
-							}}>
-							👋
-						</motion.span>
-					</motion.div>
+				<motion.div
+					// initial="initial"
+					// animate="animate"
+					variants={nameRise}
+					className="flex items-center mb-[.75em] font-normal text-[1.375em] lg:text-[1.75em]">
+					<span className="">Hi, I&lsquo;m Jackson!</span>
+					<motion.span
+						className="inline-block ml-[.375rem] text-[1.125em]"
+						animate={{ rotate: [0, 20, 0] }}
+						transition={{
+							delay: 0.75,
+							repeat: 1,
+							ease: "easeInOut",
+							duration: 0.4,
+						}}>
+						👋
+					</motion.span>
 				</motion.div>
 
 				<motion.h1
@@ -339,7 +337,7 @@ const Intro = () => {
 					style={isMd ? { visibility: "hidden", display: "none" } : {}}
 					className="flex items-center gap-[2.75em] mt-[3em] ml-[calc((3.75em-1.25rem)/2)]"
 					transition={staggerTransition()}>
-					<motion.div variants={popIntoViewVar} className="grid place-items-center">
+					<motion.div variants={popIntoViewVar} className="relative grid place-items-center">
 						<motion.div className="absolute grid place-items-center">
 							<motion.div className="absolute w-[3.75em] h-[3.75em] bg-red-400 rounded-full cursor-pointer" />
 						</motion.div>
@@ -352,7 +350,7 @@ const Intro = () => {
 						</motion.a>
 					</motion.div>
 
-					<motion.div variants={popIntoViewVar} className="grid place-items-center ml-[1px]">
+					<motion.div variants={popIntoViewVar} className="relative grid place-items-center ml-[1px]">
 						<motion.div className="absolute grid place-items-center">
 							<motion.div className="absolute w-[3.75em] h-[3.75em] bg-blue-400 rounded-full cursor-pointer" />
 						</motion.div>
@@ -361,7 +359,7 @@ const Intro = () => {
 						</motion.a>
 					</motion.div>
 
-					<motion.div variants={popIntoViewVar} className="grid place-items-center">
+					<motion.div variants={popIntoViewVar} className="relative grid place-items-center">
 						<motion.div className="absolute grid place-items-center">
 							<motion.div className="absolute w-[3.75em] h-[3.75em] bg-purple-400 rounded-full cursor-pointer" />
 						</motion.div>
