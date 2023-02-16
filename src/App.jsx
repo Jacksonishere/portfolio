@@ -6,6 +6,7 @@ import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import IntroSection from "./components/IntroSection";
 import ToolSection from "./components/ToolSection";
 import MyWork from "./components/MyWork";
+import About from "./components/About";
 
 const App = () => {
 	const containerRef = useRef(null);
@@ -26,6 +27,7 @@ const App = () => {
 				<IntroSection />
 				<ToolSection />
 				<MyWork />
+				<About />
 			</main>
 		</LocomotiveScrollProvider>
 	);

@@ -123,3 +123,9 @@
 		@apply overflow-hidden;
 	}
 }
+
+@layer utilities {
+	.container {
+		@apply mx-auto w-[90%] max-w-[72rem];
+	}
+}

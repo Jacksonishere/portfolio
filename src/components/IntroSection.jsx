@@ -108,7 +108,7 @@ const nameRise = {
 const descriptionRise = {
 	initial: {
 		opacity: 0,
-		y: "20%",
+		y: "40%",
 	},
 	animate: {
 		opacity: [0, 0.5, 1],
@@ -135,7 +135,7 @@ const IntroVar = {
 	animate: {
 		transition: {
 			delayChildren: 0.4,
-			staggerChildren: 0.2,
+			staggerChildren: 0.3,
 		},
 	},
 };
@@ -384,7 +384,7 @@ const Intro = () => {
 
 const IntroSection = () => {
 	return (
-		<section data-scroll-section data-scroll-id="intro">
+		<section data-scroll-id="intro">
 			<div className="relative mx-auto w-[88%] max-w-[1440px] h-[600px] md:h-[675px]">
 				<NavBar />
 				<Intro />

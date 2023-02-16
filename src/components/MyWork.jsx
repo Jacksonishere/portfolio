@@ -127,8 +127,8 @@ const opacityViewportVar = {
 
 const MyWork = () => {
 	return (
-		<section data-scroll-section data-scroll-id="projects">
-			<div className="pt-[1px] pb-[5em] w-[90%] max-w-[1150px] mx-auto">
+		<section data-scroll-id="projects">
+			<div className="pt-[1px] pb-[5em] container">
 				<h3 className="relative mt-[1.5em] mb-[3em] tracking-normal leading-[1.2] text-[2.25em] md:text-[clamp(2rem,_3vw,_2.3rem)] font-normal">
 					<motion.div
 						initial="offscreen"
@@ -239,7 +239,7 @@ const MyWorkCard = ({ myWork: { title, description, images, imgGrandpa, imgParen
 				{/* info area */}
 				<div className="mt-[2.5vw] md:mt-[1.5vw] flex gap-y-2 items-center">
 					<div className="leading-[1.5]">
-						<div className="relative flex items-center text-[clamp(1.125rem,_2.9vw,_1.4375rem)] md:text-[clamp(1.125rem,_2vw,_1.375rem)]">
+						<div className="relative flex items-center text-[clamp(1.25rem,_3.2vw,_1.675rem)] md:text-[clamp(1.125rem,_2vw,_1.375rem)]">
 							<p className="relative">
 								<TitleUnderline />
 								<span className="relative">{title}</span>
@@ -256,7 +256,7 @@ const MyWorkCard = ({ myWork: { title, description, images, imgGrandpa, imgParen
 							{/* </div> */}
 						</div>
 						<p
-							className="inline-block font-thin text-[clamp(.9375rem,_2.22vw,_1.09375rem)]
+							className="inline-block font-thin text-[clamp(1rem,_2.4vw,_1.09375rem)]
                   md:text-[clamp(.9375rem,_1.32vw,_1.03125rem)]">
 							{description}
 						</p>
