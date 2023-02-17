@@ -43,7 +43,7 @@
 
 	html,
 	body {
-		@apply pt-[1px] box-border font-neue min-h-[100vh] bg-gray-50 antialiased;
+		@apply pt-[1px] box-border font-neue min-h-[100vh] min-w-[100vw] overflow-x-hidden bg-gray-50 antialiased;
 	}
 
 	h1,

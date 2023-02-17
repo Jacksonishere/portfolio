@@ -239,7 +239,7 @@ const MyWorkCard = ({ myWork: { title, description, images, imgGrandpa, imgParen
 				{/* info area */}
 				<div className="mt-[2.5vw] md:mt-[1.5vw] flex gap-y-2 items-center">
 					<div className="leading-[1.5]">
-						<div className="relative flex items-center text-[clamp(1.25rem,_3.2vw,_1.675rem)] md:text-[clamp(1.125rem,_2vw,_1.375rem)]">
+						<div className="relative flex items-center text-[clamp(1.25rem,_3.2vw,_1.675rem)] md:text-[clamp(1.3rem,_2.5vw,_1.5rem)]">
 							<p className="relative">
 								<TitleUnderline />
 								<span className="relative">{title}</span>
@@ -257,7 +257,7 @@ const MyWorkCard = ({ myWork: { title, description, images, imgGrandpa, imgParen
 						</div>
 						<p
 							className="inline-block font-thin text-[clamp(1rem,_2.4vw,_1.09375rem)]
-                  md:text-[clamp(.9375rem,_1.32vw,_1.03125rem)]">
+                  md:text-[clamp(1.075rem,_1.5vw,_1.2rem)]">
 							{description}
 						</p>
 					</div>

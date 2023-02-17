@@ -54,7 +54,7 @@ const HISTORY = [
 		events: [
 			{
 				title: "Day of Birth",
-				details: "Born on the 9th of December 1999!",
+				details: "Born in China on the 9th of December 1999!",
 				date: "Dec 9, 1999",
 				icon: Cake,
 				bg: "#ffebeb",
@@ -63,61 +63,78 @@ const HISTORY = [
 	},
 ];
 
+const About = () => {
+	return (
+		<section className="bg-asif">
+			<div className="container pb-[3rem] text-white text-[1.03125rem] md:text-[clamp(1.075rem,_1.5vw,_1.2rem)]">
+				<AboutMeList />
+				<Timeline />
+			</div>
+		</section>
+	);
+};
+
+const AboutMeList = () => {
+	return (
+		<div className="mb-[3em]">
+			<h3 className="pt-[1.5em] text-[1.8em] md:text-[clamp(2rem,_3vw,_2.3rem)] font-medium tracking-tight">
+				About me 👨‍💻
+			</h3>
+			<ul className="flex flex-col gap-[.875em] mt-[1em] list-disc list-inside text-gray-200 leading-[1.375rem]">
+				<li>
+					I'm a software engineer with a focus on Front-end web development using React but am keen on gaining exposure
+					to all layers of the stack.
+				</li>
+				<li>I enjoy designing and building out seamless and intuitive user experiences.</li>
+				<li>In my free time, I like to play video games, binge shows on Netflix, and watch 🏀 🏈.</li>
+			</ul>
+		</div>
+	);
+};
+
+const Timeline = () => {
+	return (
+		<div className="">
+			<h4 className="text-[1.65em] md:text-[clamp(2rem,_3vw,_2.3rem)] font-medium tracking-tight">Timeline ⏳</h4>
+			{HISTORY.map((year, i) => (
+				<YearCard {...year} key={i} />
+			))}
+		</div>
+	);
+};
+
 const YearCard = ({ year, events }) => {
 	return (
-		<div className="[&:not(:first-child)]:mt-[1.4em]">
+		<div className="[&:not(:first-child)]:mt-[2em]">
 			<div className="grid grid-cols-[auto,1fr] gap-x-[.85em] grid-flow-row">
 				{/* empty gap */}
 				<div></div>
 				{/* year */}
-				<div className="flex items-center gap-[1em] mb-[1.35em]">
-					<h3 className="text-[1.6em] font-bold">{year}</h3>
+				<div className="flex items-center gap-[1em] mb-[1.25em]">
+					<h3 className="text-[1.5em] font-bold">{year}</h3>
 					<div className="grow h-[1px] bg-gray-100"></div>
 				</div>
 				{events.map((event, i) => (
 					<React.Fragment key={i}>
 						{/* pinpoint */}
-						<div className="flex flex-col gap-[.35rem] items-center">
+						{/* <div className="flex flex-col gap-[.5rem] items-center"> */}
+						<div className="flex flex-col items-center">
 							<div style={{ backgroundColor: event.bg }} className="p-[.55em] rounded-full">
 								<img className="max-w-[1.55em]" src={event.icon} alt="" />
 							</div>
-							<div className="pb-[2.5em] mb-[.35rem] w-[1px] h-full bg-gray-100"></div>
+							<div className="pb-[1em] w-[1px] h-full bg-gray-300"></div>
 						</div>
+
 						{/* event details */}
-						<div className="flex flex-col mb-[1.3em]">
-							<b className="block text-[1.175em]">{event.title}</b>
+						<div className="flex flex-col mb-[1.5em]">
+							<b className="block text-[1.125em]">{event.title}</b>
 							<span className="inline-block mt-[.1em] text-[.925em] text-gray-400">{event.date}</span>
-							<p className="mt-[.5em] tracking-wide leading-[1.25rem] text-[.95em] text-gray-100">{event.details}</p>
+							<p className="mt-[.5em] tracking-wide leading-[1.325rem] text-[.95em] text-gray-100">{event.details}</p>
 						</div>
 					</React.Fragment>
 				))}
 			</div>
 		</div>
-	);
-};
-const About = () => {
-	return (
-		<section className="bg-asif">
-			<div className="container pb-[3rem] text-white text-[1rem]">
-				<div>
-					<h3 className="pt-[1.25em] text-[1.8em] md:text-[clamp(2rem,_3vw,_2.3rem)] font-medium tracking-tight">
-						About me 👨‍💻
-					</h3>
-					<ul className="flex flex-col gap-[.5em] mt-[1em] list-disc list-inside text-gray-200">
-						<li>
-							I'm a software engineer with a focus on Front-end web development with React but am keen on gaining
-							exposure to all layers of the stack.
-						</li>
-						<li>Besides programming, I enjoy playing video games and watching 🏀 🏈.</li>
-					</ul>
-				</div>
-				<div>
-					{HISTORY.map((year, i) => (
-						<YearCard {...year} key={i} />
-					))}
-				</div>
-			</div>
-		</section>
 	);
 };
 
