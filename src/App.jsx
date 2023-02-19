@@ -19,7 +19,10 @@ const App = () => {
 		<LocomotiveScrollProvider
 			options={{
 				smooth: true,
-				multiplier: 0.4,
+				multiplier: 0.5,
+				tablet: {
+					breakpoint: 803, // <---- Fixes The Issue 🎉
+				},
 			}}
 			watch={[]}
 			containerRef={containerRef}>

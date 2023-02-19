@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Cake from "../assets/icons/birthday-cake-celebration-svgrepo-com.svg";
 import Suitcase from "../assets/icons/suitcase-svgrepo-com.svg";
 import Graduation from "../assets/icons/graduation-cap-svgrepo-com.svg";
+import Memoji from "../assets/icons/memoji-wave.png";
+import Memoji2 from "../assets/icons/memoji.png";
+import { useMediaQuery } from "react-responsive";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 const HISTORY = [
 	{
@@ -66,39 +70,66 @@ const HISTORY = [
 const About = () => {
 	return (
 		<section className="bg-asif">
-			<div className="container pb-[3rem] text-white text-[1.03125rem] md:text-[clamp(1.075rem,_1.5vw,_1.2rem)]">
-				<AboutMeList />
-				<Timeline />
+			<div className="container mx-auto pt-[1.5rem] pb-[2.5rem] font-normal text-white text-[1.03125rem] md:text-[clamp(1rem,_1.5vw,_1.075rem)] md:leading-[1.45rem]">
+				<div id="sticky" className="relative md:flex md:justify-between md:gap-[2em] md:items-start">
+					<AboutMeList>
+						<div className="">
+							<h3 className="mt-[1em] mb-[.5em] text-[1.75em] md:text-[clamp(1.75rem,_2.5vw,_2rem)] font-medium tracking-tight md:mt-[2rem] md:mb-[.9rem]">
+								About me 👨‍💻
+							</h3>
+							<ul className="flex flex-col gap-[.7em] list-disc list-inside text-gray-200 ">
+								<li>
+									I'm a software engineer with a focus on front-end web development using React but am keen on gaining
+									exposure to all layers of the stack.
+								</li>
+								<li>I enjoy designing and building out seamless and intuitive user experiences.</li>
+								<li>In my free time, I like to play video games, binge shows on Netflix, and watch 🏀 🏈.</li>
+							</ul>
+						</div>
+					</AboutMeList>
+					<Timeline />
+				</div>
 			</div>
 		</section>
 	);
 };
 
-const AboutMeList = () => {
-	return (
-		<div className="mb-[3em]">
-			<h3 className="pt-[1.5em] text-[1.8em] md:text-[clamp(2rem,_3vw,_2.3rem)] font-medium tracking-tight">
-				About me 👨‍💻
-			</h3>
-			<ul className="flex flex-col gap-[.875em] mt-[1em] list-disc list-inside text-gray-200 leading-[1.375rem]">
-				<li>
-					I'm a software engineer with a focus on Front-end web development using React but am keen on gaining exposure
-					to all layers of the stack.
-				</li>
-				<li>I enjoy designing and building out seamless and intuitive user experiences.</li>
-				<li>In my free time, I like to play video games, binge shows on Netflix, and watch 🏀 🏈.</li>
-			</ul>
+const AboutMeList = (props) => {
+	const isMd = useMediaQuery({ query: "(min-width: 803px)" });
+	const { scroll } = useLocomotiveScroll();
+
+	useEffect(() => {
+		scroll?.update();
+	}, [isMd]);
+	return isMd ? (
+		<div
+			data-scroll
+			data-scroll-sticky
+			data-scroll-target="#sticky"
+			className="sticky mb-[3em] md:basis-[25%] md:max-w-[17rem]">
+			<img
+				className="mt-[clamp(4rem,_11vw,_4em)] lg:mt-[clamp(4rem,_10vw,_5.5rem)] max-w-[90%] mx-auto"
+				src={Memoji}
+				alt=""
+			/>
+			{props.children}
 		</div>
+	) : (
+		<div className="sticky mb-[3em]">{props.children}</div>
 	);
 };
 
 const Timeline = () => {
 	return (
-		<div className="">
-			<h4 className="text-[1.65em] md:text-[clamp(2rem,_3vw,_2.3rem)] font-medium tracking-tight">Timeline ⏳</h4>
-			{HISTORY.map((year, i) => (
-				<YearCard {...year} key={i} />
-			))}
+		<div className="md:basis-[70%]">
+			<h4 className="mb-[.25em] text-[1.75em] text-right font-medium tracking-tight md:text-[clamp(1.75rem,_2.5vw,_2rem)] md:pt-[.6em] md:pb-[.2em] lg:pt-[1em] lg:pb-[.4em]">
+				Timeline ⏳
+			</h4>
+			<div>
+				{HISTORY.map((year, i) => (
+					<YearCard {...year} key={i} />
+				))}
+			</div>
 		</div>
 	);
 };
@@ -122,14 +153,14 @@ const YearCard = ({ year, events }) => {
 							<div style={{ backgroundColor: event.bg }} className="p-[.55em] rounded-full">
 								<img className="max-w-[1.55em]" src={event.icon} alt="" />
 							</div>
-							<div className="pb-[1em] w-[1px] h-full bg-gray-300"></div>
+							<div className="w-[1px] h-full bg-gray-300"></div>
 						</div>
 
 						{/* event details */}
 						<div className="flex flex-col mb-[1.5em]">
 							<b className="block text-[1.125em]">{event.title}</b>
 							<span className="inline-block mt-[.1em] text-[.925em] text-gray-400">{event.date}</span>
-							<p className="mt-[.5em] tracking-wide leading-[1.325rem] text-[.95em] text-gray-100">{event.details}</p>
+							<p className="mt-[.5em] tracking-wide text-[.95em] text-gray-200">{event.details}</p>
 						</div>
 					</React.Fragment>
 				))}

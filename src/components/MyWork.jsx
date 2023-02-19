@@ -239,7 +239,7 @@ const MyWorkCard = ({ myWork: { title, description, images, imgGrandpa, imgParen
 				{/* info area */}
 				<div className="mt-[2.5vw] md:mt-[1.5vw] flex gap-y-2 items-center">
 					<div className="leading-[1.5]">
-						<div className="relative flex items-center text-[clamp(1.25rem,_3.2vw,_1.675rem)] md:text-[clamp(1.3rem,_2.5vw,_1.5rem)]">
+						<div className="relative flex items-center text-[clamp(1.25rem,_3.2vw,_1.675rem)] md:text-[clamp(1.25rem,_2.5vw,_1.5rem)]">
 							<p className="relative">
 								<TitleUnderline />
 								<span className="relative">{title}</span>
@@ -256,8 +256,8 @@ const MyWorkCard = ({ myWork: { title, description, images, imgGrandpa, imgParen
 							{/* </div> */}
 						</div>
 						<p
-							className="inline-block font-thin text-[clamp(1rem,_2.4vw,_1.09375rem)]
-                  md:text-[clamp(1.075rem,_1.5vw,_1.2rem)]">
+							className="inline-block text-gray-600 text-[clamp(.9375rem,_2.4vw,_1.09375rem)]
+                  md:text-[clamp(1rem,_1.5vw,_1.15rem)]">
 							{description}
 						</p>
 					</div>
@@ -287,7 +287,7 @@ const CardSlideshow = ({ images, imgGrandpa, imgParent, largest }) => {
 			<div className={"grow relative grid place-items-center " + imgGrandpa}>
 				<motion.div className={"relative p-[5%] w-full h-full " + imgParent}>
 					{images.length > 1 && (
-						<div className="absolute inset-x-[1%] top-1/2 -translate-y-1/2 flex justify-between text-gray-600">
+						<div className="absolute inset-x-[1%] top-1/2 -translate-y-1/2 flex justify-between text-gray-600 md:inset-x-[0%] lg:inset-x-[1%]">
 							<button className="" onClick={() => paginate(-1)}>
 								<ChevronLeftBtn />
 							</button>
