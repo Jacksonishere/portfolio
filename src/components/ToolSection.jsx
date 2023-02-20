@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import useMeasure from "react-use-measure";
+import { useMediaQuery } from "react-responsive";
+
 import HTML from "../assets/icons/icons8-html-5.svg";
 import CSS from "../assets/icons/icons8-css3.svg";
 import JS from "../assets/icons/icons8-javascript.svg";
@@ -178,6 +180,7 @@ const ToolSection = () => {
 	const [[selected, currIndex, newDirection], setSelected] = useState(["framework", 0, 0]);
 	const [focused, setFocused] = React.useState(null);
 	const [ref, { height }] = useMeasure();
+	const isMd = useMediaQuery({ query: "(min-width: 803px)" });
 
 	return (
 		<section data-scroll-id="skills" className="relative grid place-items-center bg-asif">
@@ -219,7 +222,7 @@ const ToolSection = () => {
 											className="relative z-50 capitalize tracking-wider text-pill">
 											{type}
 										</motion.span>
-										{focused === type ? (
+										{focused === type && isMd ? (
 											<motion.div
 												transition={{
 													layout: {
@@ -234,7 +237,7 @@ const ToolSection = () => {
 										{isActive ? (
 											<motion.div
 												className="absolute z-[5] inset-0 bg-pill"
-												layoutId="pill"
+												layoutId={isMd ? "pill" : ""}
 												transition={{
 													layout: {
 														duration: 0.2,

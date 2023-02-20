@@ -255,7 +255,7 @@ const NavBar = () => {
 					<button onClick={() => scrollTo("intro")}>Home</button>
 				</motion.li>
 				{isMobile ? (
-					<div className="relative  ml-auto">
+					<div className="relative ml-auto">
 						<button onClick={() => setMenuOpened(true)} className="flex items-center">
 							Menu
 							<span className="ml-[.25rem] max-w-[1.2em]">
