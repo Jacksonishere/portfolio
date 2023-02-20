@@ -19,7 +19,7 @@ const App = () => {
 		<LocomotiveScrollProvider
 			options={{
 				smooth: true,
-				multiplier: 0.5,
+				multiplier: 1,
 				// mobile: {
 				// 	smooth: true,
 				// },
