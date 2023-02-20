@@ -287,7 +287,7 @@ const CardSlideshow = ({ images, imgGrandpa, imgParent, largest }) => {
 			<div className={"grow relative grid place-items-center " + imgGrandpa}>
 				<motion.div className={"relative p-[5%] w-full h-full " + imgParent}>
 					{images.length > 1 && (
-						<div className="absolute inset-x-[1%] top-1/2 -translate-y-1/2 flex justify-between text-gray-600 md:inset-x-[0%] lg:inset-x-[1%]">
+						<div className="absolute inset-x-[.5%] top-1/2 -translate-y-1/2 flex justify-between text-gray-600 md:inset-x-[0%] lg:inset-x-[1%]">
 							<button className="" onClick={() => paginate(-1)}>
 								<ChevronLeftBtn />
 							</button>

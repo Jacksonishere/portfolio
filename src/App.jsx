@@ -20,6 +20,12 @@ const App = () => {
 			options={{
 				smooth: true,
 				multiplier: 0.5,
+				// mobile: {
+				// 	smooth: true,
+				// },
+				// tablet: {
+				// 	smooth: true,
+				// },
 				tablet: {
 					breakpoint: 803, // <---- Fixes The Issue 🎉
 				},

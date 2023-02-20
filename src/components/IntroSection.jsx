@@ -11,6 +11,7 @@ import ReactIcon from "../assets/icons/react-svgrepo-com.svg";
 import NavBar from "./NavBar";
 import ArrowDown from "../assets/icons/ArrowDown";
 import ScrollDown from "../assets/icons/ScrollDown";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 const floating = {
 	animate: ({ bottom, top, delay }) => ({
@@ -152,6 +153,13 @@ const popIntoViewVar = {
 			duration: 0.3,
 		},
 	},
+	exit: {
+		opacity: 0,
+		transition: {
+			duration: 0.2,
+			ease: "easeOut",
+		},
+	},
 };
 
 const appearIntoView = {
@@ -163,7 +171,7 @@ const appearIntoView = {
 		transition: {
 			// when: "beforeChildren",
 			delay: 1,
-			duration: 0.5,
+			duration: 0.4,
 		},
 	},
 };
@@ -174,16 +182,16 @@ const staggerTransition = (delayAmt = 0, staggerAmt = 0.3) => ({
 });
 
 const Intro = () => {
+	const { scroll } = useLocomotiveScroll();
 	const [canScroll, setCanScroll] = useState(false);
 
 	const isSm = useMediaQuery({ query: "(max-width: 802px)" });
-	const isMd = useMediaQuery({ query: "(min-width: 803px)" });
-	const isL = useMediaQuery({ query: "(min-width: 1080px)" });
-	const isXL = useMediaQuery({ query: "(min-width: 1440px)" });
 
 	useEffect(() => {
-		if (canScroll) document.querySelector("body").style.overflowY = "auto";
-		else document.querySelector("body").style.overflowY = "hidden";
+		// if (canScroll) document.querySelector("body").style.overflowY = "auto";
+		// else document.querySelector("body").style.overflowY = "hidden";
+		if (canScroll) scroll?.start();
+		else scroll?.stop();
 	}, [canScroll]);
 
 	return (
@@ -333,41 +341,7 @@ const Intro = () => {
 					</div>
 				</motion.h1>
 
-				<motion.ul
-					style={isMd ? { visibility: "hidden", display: "none" } : {}}
-					className="flex items-center gap-[2.75em] mt-[3em] ml-[calc((3.75em-1.25rem)/2)]"
-					transition={staggerTransition()}>
-					<motion.div variants={popIntoViewVar} className="relative grid place-items-center">
-						<motion.div className="absolute grid place-items-center">
-							<motion.div className="absolute w-[3.75em] h-[3.75em] bg-red-400 rounded-full cursor-pointer" />
-						</motion.div>
-						<motion.a
-							className="relative"
-							target="_blank"
-							rel="noopener noreferrer"
-							href="mailto:lujackson355@gmail.com">
-							<img className="max-w-[1.375rem] md:max-w-[1.625rem]" src={GmailIcon} alt="linkedIn-floating-icon" />
-						</motion.a>
-					</motion.div>
-
-					<motion.div variants={popIntoViewVar} className="relative grid place-items-center ml-[1px]">
-						<motion.div className="absolute grid place-items-center">
-							<motion.div className="absolute w-[3.75em] h-[3.75em] bg-blue-400 rounded-full cursor-pointer" />
-						</motion.div>
-						<motion.a className="relative" target="_blank" href="https://www.linkedin.com/in/jacksonlu-dev/">
-							<img className="max-w-[1.375rem] md:max-w-[1.625rem]" src={LinkedInIcon} alt="linkedIn-floating-icon" />
-						</motion.a>
-					</motion.div>
-
-					<motion.div variants={popIntoViewVar} className="relative grid place-items-center">
-						<motion.div className="absolute grid place-items-center">
-							<motion.div className="absolute w-[3.75em] h-[3.75em] bg-purple-400 rounded-full cursor-pointer" />
-						</motion.div>
-						<motion.a className="relative" target="_blank" href="https://github.com/Jacksonishere">
-							<img className="max-w-[24px] md:max-w-[26px]" src={GithubIcon} alt="linkedIn-floating-icon" />
-						</motion.a>
-					</motion.div>
-				</motion.ul>
+				<MobileNavLinks />
 			</motion.div>
 
 			<motion.div
@@ -390,6 +364,44 @@ const IntroSection = () => {
 				<Intro />
 			</div>
 		</section>
+	);
+};
+
+export const MobileNavLinks = () => {
+	const isMd = useMediaQuery({ query: "(min-width: 803px)" });
+
+	return (
+		<motion.ul
+			style={isMd ? { visibility: "hidden", display: "none" } : {}}
+			className="flex items-center gap-[3em] mt-[3em] ml-[calc((3.75em-1.25rem)/2)]"
+			transition={staggerTransition()}>
+			<motion.div variants={popIntoViewVar} className="relative grid place-items-center">
+				<motion.div className="absolute grid place-items-center">
+					<motion.div className="absolute w-[3.75em] h-[3.75em] bg-red-400 rounded-full cursor-pointer" />
+				</motion.div>
+				<motion.a className="relative" target="_blank" rel="noopener noreferrer" href="mailto:lujackson355@gmail.com">
+					<img className="max-w-[1.375rem] md:max-w-[1.625rem]" src={GmailIcon} alt="linkedIn-floating-icon" />
+				</motion.a>
+			</motion.div>
+
+			<motion.div variants={popIntoViewVar} className="relative grid place-items-center ml-[1px]">
+				<motion.div className="absolute grid place-items-center">
+					<motion.div className="absolute w-[3.75em] h-[3.75em] bg-blue-400 rounded-full cursor-pointer" />
+				</motion.div>
+				<motion.a className="relative" target="_blank" href="https://www.linkedin.com/in/jacksonlu-dev/">
+					<img className="max-w-[1.375rem] md:max-w-[1.625rem]" src={LinkedInIcon} alt="linkedIn-floating-icon" />
+				</motion.a>
+			</motion.div>
+
+			<motion.div variants={popIntoViewVar} className="relative grid place-items-center">
+				<motion.div className="absolute grid place-items-center">
+					<motion.div className="absolute w-[3.75em] h-[3.75em] bg-purple-400 rounded-full cursor-pointer" />
+				</motion.div>
+				<motion.a className="relative" target="_blank" href="https://github.com/Jacksonishere">
+					<img className="max-w-[24px] md:max-w-[26px]" src={GithubIcon} alt="linkedIn-floating-icon" />
+				</motion.a>
+			</motion.div>
+		</motion.ul>
 	);
 };
 

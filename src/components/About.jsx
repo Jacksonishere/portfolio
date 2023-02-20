@@ -69,8 +69,8 @@ const HISTORY = [
 
 const About = () => {
 	return (
-		<section className="bg-asif">
-			<div className="container mx-auto pt-[1.5rem] pb-[2.5rem] font-normal text-white text-[1.03125rem] md:text-[clamp(1rem,_1.5vw,_1.075rem)] md:leading-[1.45rem]">
+		<section data-scroll-id="about" className="bg-asif">
+			<div className="container mx-auto pt-[1.5rem] pb-[2.5rem] font-normal text-white text-[clamp(.9375rem,_2.4vw,_1.09375rem)] md:text-[clamp(1rem,_1.5vw,_1.075rem)] md:leading-[1.45rem]">
 				<div id="sticky" className="relative md:flex md:justify-between md:gap-[2em] md:items-start">
 					<AboutMeList>
 						<div className="">
