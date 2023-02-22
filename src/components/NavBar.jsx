@@ -264,14 +264,14 @@ const NavBar = () => {
 						</button>
 					</div>
 				) : (
-					<NavLinks />
+					<NavLinks scrollTo={scrollTo} />
 				)}
 			</motion.ul>
 		</>
 	);
 };
 
-const NavLinks = () => {
+const NavLinks = ({ scrollTo }) => {
 	return (
 		<>
 			<motion.li whileHover="hover" variants={navLinkVar} className="ml-auto">
@@ -280,9 +280,9 @@ const NavLinks = () => {
 			<motion.li whileHover="hover" variants={navLinkVar} className="ml-8">
 				<button onClick={() => scrollTo("projects")}>Projects</button>
 			</motion.li>
-			{/* <motion.li whileHover="hover" variants={navLinkVar} className="ml-8">
-				<button onClick={() => scrollTo("about-me")}>About me</button>
-			</motion.li> */}
+			<motion.li whileHover="hover" variants={navLinkVar} className="ml-8">
+				<button onClick={() => scrollTo("about")}>About me</button>
+			</motion.li>
 			<motion.li whileHover={["hover"]} animate="initial" className="relative ml-8">
 				<motion.div variants={navLinkVar} className="flex-c cursor-pointer">
 					<span className="mr-3">Connect</span>
