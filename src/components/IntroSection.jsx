@@ -359,7 +359,7 @@ const Intro = () => {
 const IntroSection = () => {
 	return (
 		<section data-scroll-id="intro">
-			<div className="relative mx-auto w-[88%] max-w-[1440px] h-[600px] md:h-[675px]">
+			<div className="relative mx-auto w-[88%] max-w-[1440px] h-[600px] md:h-[80vh]">
 				<NavBar />
 				<Intro />
 			</div>
