@@ -317,7 +317,7 @@ const NavLinks = ({ scrollTo }) => {
 						</a>
 					</li>
 					<li>
-						<a className="flex-c" href="src/assets/Resume.pdf" target="_blank" rel="noopener noreferrer">
+						<a className="flex-c" href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
 							<img className="mr-[14px] w-[22px]" src={CvIcon} alt="gmail-icon" />
 							<span className="font-md">Resume</span>
 						</a>
