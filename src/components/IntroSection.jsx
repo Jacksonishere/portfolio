@@ -331,7 +331,9 @@ const Intro = () => {
 					}}>
 					<div className="line-wrap">
 						<motion.div variants={descriptionRise}>
-							Full-stack developer with a strong focus on front-end with
+							Full-Stack Web
+							<br />
+							And Mobile Developer
 							<img
 								className="inline-block ml-[.5rem] max-h-[1.125em] translate-y-[-4px]"
 								src={ReactIcon}

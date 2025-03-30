@@ -6,36 +6,28 @@ import { useMediaQuery } from "react-responsive";
 import HTML from "../assets/icons/icons8-html-5.svg";
 import CSS from "../assets/icons/icons8-css3.svg";
 import JS from "../assets/icons/icons8-javascript.svg";
+import TS from "../assets/icons/icons8-typescript.svg";
 import Python from "../assets/icons/icons8-python.svg";
-import Ruby from "../assets/icons/icons8-ruby.svg";
 import Swift from "../assets/icons/icons8-swift.svg";
 import CPP from "../assets/icons/icons8-c++.svg";
 import DB from "../assets/icons/icons8-database.png";
+import AWS from "../assets/icons/icons8-aws.svg";
 
 import Reactt from "../assets/icons/icons8-react.svg";
-import Redux from "../assets/icons/icons8-redux.svg";
 import ROR from "../assets/icons/icons8-ruby-on-rails.svg";
 import Flask from "../assets/icons/icons8-flask.svg";
-import Jquery from "../assets/icons/icons8-jquery.svg";
-import MaterialUI from "../assets/icons/icons8-material-ui.svg";
-import BootStrap from "../assets/icons/icons8-bootstrap.svg";
-import UIKit from "../assets/icons/icons8-apple.svg";
 
 import Firebase from "../assets/icons/icons8-firebase.svg";
 import Git from "../assets/icons/icons8-git.svg";
-import Gitlab from "../assets/icons/icons8-gitlab.svg";
+import Github from "../assets/icons/icons8-github.svg";
 
 const tools = [
 	{
 		type: "framework",
 		icons: [
 			{
-				name: "React",
+				name: "React/React Native",
 				Icon: Reactt,
-			},
-			{
-				name: "Redux",
-				Icon: Redux,
 			},
 			{
 				name: "Ruby On Rails",
@@ -44,22 +36,6 @@ const tools = [
 			{
 				name: "Flask",
 				Icon: Flask,
-			},
-			{
-				name: "Jquery",
-				Icon: Jquery,
-			},
-			{
-				name: "MaterialUI",
-				Icon: MaterialUI,
-			},
-			{
-				name: "Bootstrap",
-				Icon: BootStrap,
-			},
-			{
-				name: "UIKit",
-				Icon: UIKit,
 			},
 		],
 	},
@@ -79,8 +55,8 @@ const tools = [
 				Icon: JS,
 			},
 			{
-				name: "Ruby",
-				Icon: Ruby,
+				name: "Typescript",
+				Icon: TS,
 			},
 			{
 				name: "Python",
@@ -101,15 +77,19 @@ const tools = [
 		],
 	},
 	{
-		type: "utility",
+		type: "Tools",
 		icons: [
+			{
+				name: "AWS",
+				Icon: AWS,
+			},
+			{
+				name: "CI/CD with Github Actions",
+				Icon: Github,
+			},
 			{
 				name: "Git",
 				Icon: Git,
-			},
-			{
-				name: "Gitlab",
-				Icon: Gitlab,
 			},
 			{
 				name: "PostgreSQL",
@@ -266,7 +246,7 @@ const ToolSection = () => {
 										type: "tween",
 										ease: "easeInOut",
 									}}
-									className="w-full min-h-[84px] grid place-items-center justify-center grid-cols-[repeat(auto-fit,minmax(118px,max-content))] gap-4"
+									className="w-full min-h-[84px] grid place-items-center justify-center items-start grid-cols-[repeat(auto-fit,minmax(118px,max-content))] gap-8"
 									ref={ref}>
 									{tools
 										.find(({ type }) => type === selected)
