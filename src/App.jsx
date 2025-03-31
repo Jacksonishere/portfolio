@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import NavBar from "./components/NavBar";
+import { Analytics } from "@vercel/analytics/react";
 
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
@@ -16,29 +16,26 @@ const App = () => {
 	}, []);
 
 	return (
-		<LocomotiveScrollProvider
-			options={{
-				smooth: true,
-				multiplier: 0.5,
-				// mobile: {
-				// 	smooth: true,
-				// },
-				// tablet: {
-				// 	smooth: true,
-				// },
-				tablet: {
-					breakpoint: 803, // <---- Fixes The Issue 🎉
-				},
-			}}
-			watch={[]}
-			containerRef={containerRef}>
-			<main data-scroll-container ref={containerRef} className="pt-8">
-				<IntroSection />
-				<ToolSection />
-				<MyWork />
-				<About />
-			</main>
-		</LocomotiveScrollProvider>
+		<>
+			<LocomotiveScrollProvider
+				options={{
+					smooth: true,
+					multiplier: 0.5,
+					tablet: {
+						breakpoint: 803,
+					},
+				}}
+				watch={[]}
+				containerRef={containerRef}>
+				<main data-scroll-container ref={containerRef} className="pt-8">
+					<IntroSection />
+					<ToolSection />
+					<MyWork />
+					<About />
+				</main>
+			</LocomotiveScrollProvider>
+			<Analytics />
+		</>
 	);
 };
 

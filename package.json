@@ -9,6 +9,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@vercel/analytics": "^1.5.0",
 		"framer-motion": "^8.0.2",
 		"locomotive-scroll": "^4.1.4",
 		"react": "^18.2.0",
