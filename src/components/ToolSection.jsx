@@ -13,6 +13,8 @@ import Swift from "../assets/icons/icons8-swift.svg";
 import CPP from "../assets/icons/icons8-c++.svg";
 import DB from "../assets/icons/icons8-database.png";
 import AWS from "../assets/icons/icons8-aws.svg";
+import Terraform from "../assets/icons/icons8-terraform.svg";
+import Docker from "../assets/icons/icons8-docker.svg";
 
 import Reactt from "../assets/icons/icons8-react.svg";
 import ROR from "../assets/icons/icons8-ruby-on-rails.svg";
@@ -24,7 +26,40 @@ import Github from "../assets/icons/icons8-github.svg";
 
 const tools = [
 	{
-		type: "framework",
+		type: "Tools",
+		icons: [
+			{
+				name: "AWS",
+				Icon: AWS,
+			},
+			{
+				name: "Terraform",
+				Icon: Terraform,
+			},
+			{
+				name: "Docker",
+				Icon: Docker,
+			},
+			{
+				name: "CI/CD",
+				Icon: Github,
+			},
+			{
+				name: "Git",
+				Icon: Git,
+			},
+			{
+				name: "PostgreSQL",
+				Icon: DB,
+			},
+			{
+				name: "Firebase",
+				Icon: Firebase,
+			},
+		],
+	},
+	{
+		type: "frameworks",
 		icons: [
 			{
 				name: "React/React Native",
@@ -41,7 +76,7 @@ const tools = [
 		],
 	},
 	{
-		type: "language",
+		type: "languages",
 		icons: [
 			{
 				name: "HTML",
@@ -78,31 +113,6 @@ const tools = [
 			{
 				name: "Swift",
 				Icon: Swift,
-			},
-		],
-	},
-	{
-		type: "Tools",
-		icons: [
-			{
-				name: "AWS",
-				Icon: AWS,
-			},
-			{
-				name: "CI/CD",
-				Icon: Github,
-			},
-			{
-				name: "Git",
-				Icon: Git,
-			},
-			{
-				name: "PostgreSQL",
-				Icon: DB,
-			},
-			{
-				name: "Firebase",
-				Icon: Firebase,
 			},
 		],
 	},
@@ -162,7 +172,7 @@ const SkillsVar = {
 	},
 };
 const ToolSection = () => {
-	const [[selected, currIndex, newDirection], setSelected] = useState(["framework", 0, 0]);
+	const [[selected, currIndex, newDirection], setSelected] = useState(["frameworks", 0, 0]);
 	const [focused, setFocused] = React.useState(null);
 	const [ref, { height }] = useMeasure();
 	const isMd = useMediaQuery({ query: "(min-width: 803px)" });

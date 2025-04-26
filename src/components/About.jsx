@@ -1,13 +1,26 @@
 import React, { useEffect } from "react";
-import Cake from "../assets/icons/birthday-cake-celebration-svgrepo-com.svg";
-import Suitcase from "../assets/icons/suitcase-svgrepo-com.svg";
 import Graduation from "../assets/icons/graduation-cap-svgrepo-com.svg";
 import Memoji from "../assets/icons/memoji-wave.png";
 import Sunnova from "../assets/icons/sunnova-icon.png";
 import TLlogo from "../assets/icons/tl-logo.png";
-import Memoji2 from "../assets/icons/memoji.png";
 import { useMediaQuery } from "react-responsive";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
+import { motion } from "framer-motion";
+
+const OffScreenVar = {
+	offscreen: {
+		opacity: 0,
+		y: -20,
+	},
+	onscreen: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			ease: "easeInOut",
+			duration: 0.4,
+		},
+	},
+};
 
 const HISTORY = [
 	{
@@ -63,7 +76,13 @@ const HISTORY = [
 
 const About = () => {
 	return (
-		<section data-scroll-id="about" className="bg-bg_color">
+		<motion.section
+			initial="offscreen"
+			whileInView="onscreen"
+			variants={OffScreenVar}
+			viewport={{ once: true, amount: 0.4 }}
+			data-scroll-id="about"
+			className="bg-bg_color">
 			<div className="container mx-auto pt-[1.5rem] pb-[4.5rem] font-normal text-white text-[clamp(.9375rem,_2.4vw,_1.09375rem)] md:text-[clamp(1rem,_1.5vw,_1.075rem)] md:leading-[1.45rem]">
 				<div id="sticky" className="relative md:flex md:justify-between md:gap-[5em] lg:gap-[10em] md:items-start">
 					<AboutMeList>
@@ -87,7 +106,7 @@ const About = () => {
 					<Timeline />
 				</div>
 			</div>
-		</section>
+		</motion.section>
 	);
 };
 
