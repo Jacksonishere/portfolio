@@ -25,8 +25,8 @@ const MOBILELINKS = [
 		to: "projects",
 	},
 	{
-		label: "About Me",
-		to: "about",
+		label: "Experience",
+		to: "experience",
 	},
 ];
 
@@ -275,13 +275,13 @@ const NavLinks = ({ scrollTo }) => {
 	return (
 		<>
 			<motion.li whileHover="hover" variants={navLinkVar} className="ml-auto">
+				<button onClick={() => scrollTo("about")}>Experience</button>
+			</motion.li>
+			<motion.li whileHover="hover" variants={navLinkVar} className="ml-8">
 				<button onClick={() => scrollTo("skills")}>Skills</button>
 			</motion.li>
 			<motion.li whileHover="hover" variants={navLinkVar} className="ml-8">
 				<button onClick={() => scrollTo("projects")}>Projects</button>
-			</motion.li>
-			<motion.li whileHover="hover" variants={navLinkVar} className="ml-8">
-				<button onClick={() => scrollTo("about")}>About me</button>
 			</motion.li>
 			<motion.li whileHover={["hover"]} animate="initial" className="relative ml-8">
 				<motion.div variants={navLinkVar} className="flex-c cursor-pointer">
@@ -314,12 +314,6 @@ const NavLinks = ({ scrollTo }) => {
 							rel="noopener noreferrer">
 							<img className="mr-[14px] w-[22px]" src={LinkedInIcon} alt="linkedin-icon" />
 							<span className="font-md">LinkedIn</span>
-						</a>
-					</li>
-					<li>
-						<a className="flex-c" href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
-							<img className="mr-[14px] w-[22px]" src={CvIcon} alt="gmail-icon" />
-							<span className="font-md">Resume</span>
 						</a>
 					</li>
 				</motion.ul>

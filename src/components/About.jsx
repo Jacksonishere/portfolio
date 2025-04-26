@@ -11,19 +11,7 @@ import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 const HISTORY = [
 	{
-		year: "2025",
-		events: [
-			{
-				title: "Ready For The Next Chapter",
-				details: "TBD...",
-				date: "",
-				icon: Suitcase,
-				bg: "#e3e3e3",
-			},
-		],
-	},
-	{
-		year: "2023",
+		year: "2023 - Present",
 		events: [
 			{
 				title: "Joined Sunnova as a Full-Stack Mobile Developer",
@@ -40,7 +28,7 @@ const HISTORY = [
 		year: "2022",
 		events: [
 			{
-				title: "I'm a Software Developer!",
+				title: "Officially a Software Developer!",
 				details:
 					"Owned a full-stack data presentation app, building advanced frontend features like filtering, grid customization, and data import/export. Cached historical and daily calculated data using Redis to improve performance of our Rails API",
 				date: "Jan 1, 2022",
@@ -71,25 +59,13 @@ const HISTORY = [
 			},
 		],
 	},
-	{
-		year: "1999",
-		events: [
-			{
-				title: "Day of Birth",
-				details: "Born in China on the 9th of December 1999!",
-				date: "Dec 9, 1999",
-				icon: Cake,
-				bg: "#ffebeb",
-			},
-		],
-	},
 ];
 
 const About = () => {
 	return (
-		<section data-scroll-id="about" className="bg-asif">
-			<div className="container mx-auto pt-[1.5rem] pb-[2.5rem] font-normal text-white text-[clamp(.9375rem,_2.4vw,_1.09375rem)] md:text-[clamp(1rem,_1.5vw,_1.075rem)] md:leading-[1.45rem]">
-				<div id="sticky" className="relative md:flex md:justify-between md:gap-[2em] md:items-start">
+		<section data-scroll-id="about" className="bg-bg_color">
+			<div className="container mx-auto pt-[1.5rem] pb-[4.5rem] font-normal text-white text-[clamp(.9375rem,_2.4vw,_1.09375rem)] md:text-[clamp(1rem,_1.5vw,_1.075rem)] md:leading-[1.45rem]">
+				<div id="sticky" className="relative md:flex md:justify-between md:gap-[5em] lg:gap-[10em] md:items-start">
 					<AboutMeList>
 						<div className="">
 							<h3 className="mt-[1em] mb-[.5em] text-[1.75em] md:text-[clamp(1.75rem,_2.5vw,_2rem)] font-medium tracking-tight md:mt-[2rem] md:mb-[.9rem]">
@@ -97,14 +73,14 @@ const About = () => {
 							</h3>
 							<ul className="flex flex-col gap-[.7em] list-disc list-inside text-gray-200 ">
 								<li>
-									I'm a software engineer who thrives across the full stack, driven by solving complex business problems
-									and building impactful solutions
+									I'm a passionate engineer who thrives across the whole stack, driven by solving complex business
+									problems and building impactful solutions
 								</li>
 								<li>
-									I embrace challenges as opportunities to grow, with a long-term goal of becoming a solutions architect
-									who not only designs systems but builds them hands-on
+									I view challenges as growth opportunities, aiming to become a solutions architect who builds as much
+									as they design.
 								</li>
-								<li>In my free time, I like to lift weights and eat 🏋️</li>
+								<li>Current hobby outside of programming: 🏋️</li>
 							</ul>
 						</div>
 					</AboutMeList>

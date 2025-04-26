@@ -19,19 +19,13 @@ import VRMaze4 from "../assets/icons/vr-maze-4.png";
 import VRMaze5 from "../assets/icons/vr-maze-5.png";
 import VRMaze6 from "../assets/icons/vr-maze-6.png";
 
-import LinkSvg from "../assets/icons/link.svg";
 import Underline from "../assets/icons/underline.svg";
 import TitleUnderline from "../assets/icons/TitleUnderline";
-
-import Browser from "../assets/icons/internet-svgrepo-com.svg";
-// import Github from "../assets/icons/icons8-github.svg";
 
 import Github from "../assets/icons/Github";
 import Internet from "../assets/icons/Internet";
 import Youtube from "../assets/icons/Youtube";
 
-import ArrowLeft from "../assets/icons/arrow-left.svg";
-import ArrowRight from "../assets/icons/arrow-right.svg";
 import ChevronLeftBtn from "../assets/icons/ChevronLeftBtn";
 import ChevronRightBtn from "../assets/icons/ChevronRightBtn";
 
@@ -127,7 +121,7 @@ const opacityViewportVar = {
 
 const MyWork = () => {
 	return (
-		<section data-scroll-id="projects">
+		<section data-scroll-id="projects" className="bg-bg_color">
 			<div className="pt-[1px] pb-[5em] container">
 				<h3 className="relative mt-[1.5em] mb-[3em] tracking-normal leading-[1.2] text-[2.25em] md:text-[clamp(2rem,_3vw,_2.3rem)] font-normal">
 					<motion.div
@@ -140,7 +134,7 @@ const MyWork = () => {
 							transition={{ staggerChildren: 0.2 }}
 							variants={dummyVar}>
 							<motion.span variants={OffScreenVar} viewport={{ once: true }} className="block">
-								Selected
+								<span className="text-white">Selected</span>
 							</motion.span>
 							<motion.img
 								className="absolute top-[calc(100%-.375rem)] max-w-full"
@@ -156,7 +150,7 @@ const MyWork = () => {
 							transition={{ staggerChildren: 0.2 }}
 							variants={dummyVar}>
 							<motion.span variants={OffScreenVar} viewport={{ once: true }} className="block">
-								Projects
+								<span className="text-white">Projects</span>
 							</motion.span>
 							<motion.img
 								className="absolute top-[calc(100%-.375rem)] max-w-full"
@@ -242,7 +236,7 @@ const MyWorkCard = ({ myWork: { title, description, images, imgGrandpa, imgParen
 						<div className="relative flex items-center text-[clamp(1.25rem,_3.2vw,_1.675rem)] md:text-[clamp(1.25rem,_2.5vw,_1.5rem)]">
 							<p className="relative">
 								<TitleUnderline />
-								<span className="relative">{title}</span>
+								<span className="relative text-white">{title}</span>
 							</p>
 							<ul className="ml-[.7em] mt-[-2px] md:mt-[-1px] flex items-center gap-1">
 								{links?.map(({ to, Icon }) => (
@@ -256,7 +250,7 @@ const MyWorkCard = ({ myWork: { title, description, images, imgGrandpa, imgParen
 							{/* </div> */}
 						</div>
 						<p
-							className="inline-block text-gray-600 text-[clamp(.9375rem,_2.4vw,_1.09375rem)]
+							className="inline-block text-white opacity-80 text-[clamp(.9375rem,_2.4vw,_1.09375rem)]
                   md:text-[clamp(1rem,_1.5vw,_1.15rem)]">
 							{description}
 						</p>

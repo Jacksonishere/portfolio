@@ -29,9 +29,9 @@ const App = () => {
 				containerRef={containerRef}>
 				<main data-scroll-container ref={containerRef} className="pt-8">
 					<IntroSection />
+					<About />
 					<ToolSection />
 					<MyWork />
-					<About />
 				</main>
 			</LocomotiveScrollProvider>
 			<Analytics />

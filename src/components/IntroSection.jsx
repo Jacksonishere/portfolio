@@ -308,7 +308,7 @@ const Intro = () => {
 					// initial="initial"
 					// animate="animate"
 					variants={nameRise}
-					className="flex items-center mb-[.75em] font-normal text-[1.375em] lg:text-[1.75em]">
+					className="flex items-center mb-[.75em] font-normal text-[1.45em] lg:text-[1.85em] xl:text-[2.2em]">
 					<span className="">Hi, I&lsquo;m Jackson!</span>
 					<motion.span
 						className="inline-block ml-[.375rem] text-[1.125em]"
@@ -324,16 +324,16 @@ const Intro = () => {
 				</motion.div>
 
 				<motion.h1
-					className="font-bold tracking-[.03em] text-[2.2em] md:text-[2.75em] lg:text-[3.25em] leading-[1.1] md:leading-[1.075]"
+					className="font-bold tracking-[.03em] text-[2.5em] md:text-[3em] lg:text-[3.5em] leading-[1.1] md:leading-[1.075]"
 					variants={header}
 					onAnimationComplete={() => {
 						setCanScroll(true);
 					}}>
 					<div className="line-wrap">
 						<motion.div variants={descriptionRise}>
-							Full-Stack Web
+							AWS Certified Full-Stack
 							<br />
-							And Mobile Developer
+							Mobile & Web Developer
 							<img
 								className="inline-block ml-[.5rem] max-h-[1.125em] translate-y-[-4px]"
 								src={ReactIcon}

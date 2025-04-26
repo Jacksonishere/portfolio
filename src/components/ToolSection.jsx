@@ -7,6 +7,7 @@ import HTML from "../assets/icons/icons8-html-5.svg";
 import CSS from "../assets/icons/icons8-css3.svg";
 import JS from "../assets/icons/icons8-javascript.svg";
 import TS from "../assets/icons/icons8-typescript.svg";
+import NodeJS from "../assets/icons/icons8-nodejs.svg";
 import Python from "../assets/icons/icons8-python.svg";
 import Swift from "../assets/icons/icons8-swift.svg";
 import CPP from "../assets/icons/icons8-c++.svg";
@@ -59,6 +60,10 @@ const tools = [
 				Icon: TS,
 			},
 			{
+				name: "NodeJS",
+				Icon: NodeJS,
+			},
+			{
 				name: "Python",
 				Icon: Python,
 			},
@@ -84,7 +89,7 @@ const tools = [
 				Icon: AWS,
 			},
 			{
-				name: "CI/CD with Github Actions",
+				name: "CI/CD",
 				Icon: Github,
 			},
 			{
@@ -111,7 +116,7 @@ const SelectedTabVar = {
 					color: "rgb(255,255,255)",
 			  }
 			: {
-					color: "#9eb7b7",
+					color: "#151f20",
 			  },
 };
 
@@ -163,7 +168,7 @@ const ToolSection = () => {
 	const isMd = useMediaQuery({ query: "(min-width: 803px)" });
 
 	return (
-		<section data-scroll-id="skills" className="relative grid place-items-center bg-asif">
+		<section data-scroll-id="skills" className="relative grid place-items-center ">
 			<div className="mx-auto w-full max-w-[1200px] ">
 				<motion.div
 					initial="offscreen"
@@ -171,7 +176,7 @@ const ToolSection = () => {
 					variants={ParentOffscreenVar}
 					viewport={{ once: true, amount: 0.9 }}
 					className="flex flex-col place-items-center pt-[48px] pb-[46px]">
-					<motion.h2 variants={OffScreenVar} className="font-thin text-white tracking-wider text-[2.20em]">
+					<motion.h2 variants={OffScreenVar} className="font-normal text-pill text-[2.20em]">
 						Skills
 					</motion.h2>
 
@@ -199,7 +204,7 @@ const ToolSection = () => {
 											transition={{
 												duration: 0.2,
 											}}
-											className="relative z-50 capitalize tracking-wider text-pill">
+											className="relative z-50 capitalize tracking-wider text-bg_color">
 											{type}
 										</motion.span>
 										{focused === type && isMd ? (
@@ -253,7 +258,7 @@ const ToolSection = () => {
 										.icons.map(({ name, Icon }) => (
 											<li className="max-w-[118px] min-h-[84px] grid place-items-center gap-3" key={name}>
 												<img className="w-[3em] h-[3em]" src={Icon} alt="asds" />
-												<div className="font-thin text-[1.15em] lg-text-[1.3em] text-center text-white tracking-wider">
+												<div className="font-thin text-[1.15em] lg-text-[1.3em] text-center text-bg_color tracking-wider">
 													{name}
 												</div>
 											</li>
