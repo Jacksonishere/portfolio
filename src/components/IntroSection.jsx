@@ -188,10 +188,11 @@ const Intro = () => {
 	const isSm = useMediaQuery({ query: "(max-width: 802px)" });
 
 	useEffect(() => {
-		// if (canScroll) document.querySelector("body").style.overflowY = "auto";
-		// else document.querySelector("body").style.overflowY = "hidden";
-		if (canScroll) scroll?.start();
-		else scroll?.stop();
+		if (canScroll) {
+			scroll?.start();
+		} else {
+			scroll?.stop();
+		}
 	}, [canScroll]);
 
 	return (

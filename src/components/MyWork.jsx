@@ -231,7 +231,7 @@ const MyWorkCard = ({ myWork: { title, description, images, imgGrandpa, imgParen
 				{/* slideshow */}
 				<CardSlideshow images={images} imgGrandpa={imgGrandpa} imgParent={imgParent} largest={largest} />
 				{/* info area */}
-				<div className="mt-[2.5vw] md:mt-[1.5vw] flex gap-y-2 items-center">
+				<div className="mt-[.5em] flex gap-y-2 items-center">
 					<div className="leading-[1.5]">
 						<div className="relative flex items-center text-[clamp(1.25rem,_3.2vw,_1.675rem)] md:text-[clamp(1.25rem,_2.5vw,_1.5rem)]">
 							<p className="relative">

@@ -20,7 +20,6 @@ module.exports = {
 				border: "#E3E3E3",
 				backdrop: "#00000080",
 				separator: "#E5E7EB",
-				pill: "#151f20",
 				bg_color: "#151f20",
 				fem: "#f1f5fb",
 				meditapp: "#f4ede3",

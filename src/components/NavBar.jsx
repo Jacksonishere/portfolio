@@ -17,16 +17,16 @@ const MOBILELINKS = [
 		to: "intro",
 	},
 	{
+		label: "Experience",
+		to: "experience",
+	},
+	{
 		label: "Skills",
 		to: "skills",
 	},
 	{
 		label: "Projects",
 		to: "projects",
-	},
-	{
-		label: "Experience",
-		to: "experience",
 	},
 ];
 
@@ -208,7 +208,7 @@ const NavBar = () => {
 						<motion.div
 							variants={mobileMenuBGVar}
 							// exit="initial"
-							className=" fixed inset-0 bg-asif"
+							className=" fixed inset-0 bg-bg_color"
 						/>
 
 						{/* content */}

@@ -26,7 +26,7 @@ import Github from "../assets/icons/icons8-github.svg";
 
 const tools = [
 	{
-		type: "Tools",
+		type: "tools",
 		icons: [
 			{
 				name: "AWS",
@@ -172,7 +172,7 @@ const SkillsVar = {
 	},
 };
 const ToolSection = () => {
-	const [[selected, currIndex, newDirection], setSelected] = useState(["frameworks", 0, 0]);
+	const [[selected, currIndex, newDirection], setSelected] = useState(["tools", 0, 0]);
 	const [focused, setFocused] = React.useState(null);
 	const [ref, { height }] = useMeasure();
 	const isMd = useMediaQuery({ query: "(min-width: 803px)" });
@@ -186,14 +186,14 @@ const ToolSection = () => {
 					variants={ParentOffscreenVar}
 					viewport={{ once: true, amount: 0.9 }}
 					className="flex flex-col place-items-center pt-[48px] pb-[46px]">
-					<motion.h2 variants={OffScreenVar} className="font-normal text-pill text-[2.20em]">
+					<motion.h2 variants={OffScreenVar} className="font-normal text-bg_color text-[2.20em]">
 						Skills
 					</motion.h2>
 
 					<motion.div variants={OffScreenVar} layout="size" className="w-full flex flex-col items-center">
 						<motion.ul
 							onMouseLeave={() => setFocused(null)}
-							className="overflow-hidden rounded-full flex mt-[2.5em] mb-[3em] divide-x-[1px] divide-pill border-[1px] border-pill">
+							className="overflow-hidden rounded-full flex mt-[2.5em] mb-[3em] divide-x-[1px] divide-bg_color border-[1px] border-bg_color">
 							{tools.map(({ type }, i) => {
 								let isActive = type === selected;
 								return (
@@ -231,7 +231,7 @@ const ToolSection = () => {
 										) : null}
 										{isActive ? (
 											<motion.div
-												className="absolute z-[5] inset-0 bg-pill"
+												className="absolute z-[5] inset-0 bg-bg_color"
 												layoutId={isMd ? "pill" : ""}
 												transition={{
 													layout: {
