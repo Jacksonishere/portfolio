@@ -7,6 +7,7 @@ import IntroSection from "./components/IntroSection";
 import ToolSection from "./components/ToolSection";
 import MyWork from "./components/MyWork";
 import About from "./components/About";
+import Footer from "./components/Footer";
 
 const App = () => {
 	const containerRef = useRef(null);
@@ -32,6 +33,7 @@ const App = () => {
 					<About />
 					<ToolSection />
 					<MyWork />
+					<Footer />
 				</main>
 			</LocomotiveScrollProvider>
 			<Analytics />
