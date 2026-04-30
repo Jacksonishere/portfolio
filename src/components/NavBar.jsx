@@ -251,9 +251,6 @@ const NavBar = () => {
 				animate="animate"
 				variants={navDropVar}
 				className="relative z-10 flex items-center text-[.9375rem] md:text-[1rem] ">
-				<motion.li whileHover="hover" variants={navLinkVar}>
-					<button onClick={() => scrollTo("intro")}>Home</button>
-				</motion.li>
 				{isMobile ? (
 					<div className="relative ml-auto">
 						<button onClick={() => setMenuOpened(true)} className="flex items-center">
