@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Graduation from "../assets/icons/graduation-cap-svgrepo-com.svg";
 import Memoji from "../assets/icons/memoji-wave.png";
 import Sunnova from "../assets/icons/sunnova-icon.png";
+import NTTData from "../assets/icons/nttdata-icon.png";
 import TLlogo from "../assets/icons/tl-logo.png";
 import { useMediaQuery } from "react-responsive";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
@@ -24,16 +25,31 @@ const OffScreenVar = {
 
 const HISTORY = [
 	{
-		year: "2023 - Present",
+		year: "2025 - Present",
+		events: [
+			{
+				title: "Joined NTT Data as a Senior Software Engineer",
+				details:
+					"Senior engineer working across test automation, enterprise portal migration, and Salesforce deployment pipelines to drive operational efficiency for large-scale enterprise systems.",
+				date: "June 2, 2025",
+				icon: NTTData,
+				bg: "#e3e3e3",
+				logo: true,
+			},
+		],
+	},
+	{
+		year: "2023 - 2025",
 		events: [
 			{
 				title: "Joined Sunnova as a Full-Stack Mobile Developer",
 				details:
-					"Full-stack mobile developer working across React Native, serverless backend, and infrastructure. Contributed to app performance, payment integrations, notification systems, and CI/CD pipelines to improve user experience and operational efficiency",
-				date: "June 12, 2023",
+					"Full-stack mobile developer working across React Native, serverless backend, and AWS infrastructure. Led payment integrations, push notification systems, and app performance improvements while establishing CI/CD pipelines and full-stack observability.",
+				date: "June 12, 2023 – May 31, 2025",
 				icon: Sunnova,
 				bg: "#e3e3e3",
 				logo: true,
+				credlyBadgeId: "330947b8-9c49-4cf8-b88d-62f2a67ef23e",
 			},
 		],
 	},
@@ -43,7 +59,7 @@ const HISTORY = [
 			{
 				title: "Officially a Software Developer!",
 				details:
-					"Owned a full-stack data presentation app, building advanced frontend features like filtering, grid customization, and data import/export. Cached historical and daily calculated data using Redis to improve performance of our Rails API",
+					"Full-stack developer building and owning a financial data platform. Developed advanced grid features, real-time charting, and data import/export while improving API performance through Redis caching.",
 				date: "Jan 1, 2022",
 				icon: TLlogo,
 				bg: "#e3e3e3",
@@ -75,6 +91,14 @@ const HISTORY = [
 ];
 
 const About = () => {
+	useEffect(() => {
+		const script = document.createElement("script");
+		script.src = "//cdn.credly.com/assets/utilities/embed.js";
+		script.async = true;
+		document.body.appendChild(script);
+		return () => document.body.removeChild(script);
+	}, []);
+
 	return (
 		<motion.section
 			initial="offscreen"
@@ -84,7 +108,7 @@ const About = () => {
 			data-scroll-id="about"
 			className="bg-bg_color">
 			<div className="container mx-auto pt-[1.5rem] pb-[4.5rem] font-normal text-white text-[clamp(.9375rem,_2.4vw,_1.09375rem)] md:text-[clamp(1rem,_1.5vw,_1.075rem)] md:leading-[1.45rem]">
-				<div id="sticky" className="relative md:flex md:justify-between md:gap-[5em] lg:gap-[10em] md:items-start">
+				<div id="sticky" className="relative md:flex md:justify-between md:gap-[1em] lg:gap-[10em] md:items-start">
 					<AboutMeList>
 						<div className="">
 							<h3 className="mt-[1em] mb-[.5em] text-[1.75em] md:text-[clamp(1.75rem,_2.5vw,_2rem)] font-medium tracking-tight md:mt-[2rem] md:mb-[.9rem]">
@@ -122,12 +146,14 @@ const AboutMeList = (props) => {
 			data-scroll
 			data-scroll-sticky
 			data-scroll-target="#sticky"
-			className="sticky mb-[3em] md:basis-[25%] md:max-w-[17rem]">
-			<img
-				className="mt-[clamp(4rem,_11vw,_4em)] lg:mt-[clamp(4rem,_10vw,_5.5rem)] max-w-[90%] mx-auto"
-				src={Memoji}
-				alt=""
-			/>
+			className="sticky mb-[3em] md:basis-[35%] md:max-w-[21rem]">
+			<div className="mt-[clamp(4rem,_11vw,_4em)] lg:mt-[clamp(4rem,_10vw,_5.5rem)] w-full mx-auto aspect-square rounded-full overflow-hidden">
+				<img
+					className="w-full h-full object-cover object-[center_65%] scale-[1.15]"
+					src="https://xxcedwfnr0gw43oa.public.blob.vercel-storage.com/myself.jpg"
+					alt=""
+				/>
+			</div>
 			{props.children}
 		</div>
 	) : (
@@ -137,7 +163,7 @@ const AboutMeList = (props) => {
 
 const Timeline = () => {
 	return (
-		<div className="md:basis-[70%]">
+		<div className="md:basis-[65%]">
 			<h4 className="mb-[.25em] text-[1.75em] text-right font-medium tracking-tight md:text-[clamp(1.75rem,_2.5vw,_2rem)] md:pt-[.6em] md:pb-[.2em] lg:pt-[1em] lg:pb-[.4em]">
 				Timeline ⏳
 			</h4>
@@ -179,6 +205,19 @@ const YearCard = ({ year, events }) => {
 							<b className="block text-[1.125em]">{event.title}</b>
 							<span className="inline-block mt-[.1em] text-[.925em] text-gray-400">{event.date}</span>
 							<p className="mt-[.5em] tracking-wide text-[.95em] text-gray-200">{event.details}</p>
+							{event.credlyBadgeId && (
+								<div className="mt-[1em]">
+									<p className="mb-[.75em] text-[.875em] text-gray-400 italic">
+										🎉 Finally received my AWS Certificate after delaying it for months!
+									</p>
+									<div
+										data-iframe-width="150"
+										data-iframe-height="270"
+										data-share-badge-id={event.credlyBadgeId}
+										data-share-badge-host="https://www.credly.com"
+									/>
+								</div>
+							)}
 						</div>
 					</React.Fragment>
 				))}

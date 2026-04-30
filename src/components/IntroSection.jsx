@@ -195,6 +195,7 @@ const Intro = () => {
 		}
 	}, [canScroll]);
 
+
 	return (
 		<>
 			<div style={isSm ? { visibility: "hidden", display: "none" } : {}}>

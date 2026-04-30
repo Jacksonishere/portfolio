@@ -316,6 +316,16 @@ const NavLinks = ({ scrollTo }) => {
 							<span className="font-md">LinkedIn</span>
 						</a>
 					</li>
+					<li>
+						<a
+							className="flex-c"
+							href="https://xxcedwfnr0gw43oa.public.blob.vercel-storage.com/jackson-resume.pdf"
+							target="_blank"
+							rel="noopener noreferrer">
+							<img className="mr-[14px] w-[22px]" src={CvIcon} alt="resume-icon" />
+							<span className="font-md">Resume</span>
+						</a>
+					</li>
 				</motion.ul>
 			</motion.li>
 		</>
