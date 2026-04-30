@@ -108,7 +108,7 @@ const About = () => {
 			data-scroll-id="about"
 			className="bg-bg_color">
 			<div className="container mx-auto pt-[1.5rem] pb-[4.5rem] font-normal text-white text-[clamp(.9375rem,_2.4vw,_1.09375rem)] md:text-[clamp(1rem,_1.5vw,_1.075rem)] md:leading-[1.45rem]">
-				<div id="sticky" className="relative md:flex md:justify-between md:gap-[1em] lg:gap-[10em] md:items-start">
+				<div id="sticky" className="relative md:flex md:justify-between md:gap-[1.5em] lg:gap-[5em] md:items-start">
 					<AboutMeList>
 						<div className="">
 							<h3 className="mt-[1em] mb-[.5em] text-[1.75em] md:text-[clamp(1.75rem,_2.5vw,_2rem)] font-medium tracking-tight md:mt-[2rem] md:mb-[.9rem]">
@@ -141,7 +141,7 @@ const AboutMeList = (props) => {
 	useEffect(() => {
 		scroll?.update();
 	}, [isMd]);
-	return isMd ? (
+	return (
 		<div
 			data-scroll
 			data-scroll-sticky
@@ -149,16 +149,32 @@ const AboutMeList = (props) => {
 			className="sticky mb-[3em] md:basis-[35%] md:max-w-[21rem]">
 			<div className="mt-[clamp(4rem,_11vw,_4em)] lg:mt-[clamp(4rem,_10vw,_5.5rem)] w-full mx-auto aspect-square rounded-full overflow-hidden">
 				<img
-					className="w-full h-full object-cover object-[center_65%] scale-[1.15]"
+					className="w-full h-full object-cover object-[center_65%] scale-[1] md:scale-[1.15]"
 					src="https://xxcedwfnr0gw43oa.public.blob.vercel-storage.com/myself.jpg"
 					alt=""
 				/>
 			</div>
 			{props.children}
 		</div>
-	) : (
-		<div className="sticky mb-[3em]">{props.children}</div>
 	);
+	// return isMd ? (
+	// 	<div
+	// 		data-scroll
+	// 		data-scroll-sticky
+	// 		data-scroll-target="#sticky"
+	// 		className="sticky mb-[3em] md:basis-[35%] md:max-w-[21rem]">
+	// 		<div className="mt-[clamp(4rem,_11vw,_4em)] lg:mt-[clamp(4rem,_10vw,_5.5rem)] w-full mx-auto aspect-square rounded-full overflow-hidden">
+	// 			<img
+	// 				className="w-full h-full object-cover object-[center_65%] scale-[1.15]"
+	// 				src="https://xxcedwfnr0gw43oa.public.blob.vercel-storage.com/myself.jpg"
+	// 				alt=""
+	// 			/>
+	// 		</div>
+	// 		{props.children}
+	// 	</div>
+	// ) : (
+	// 	<div className="sticky mb-[3em]">{props.children}</div>
+	// );
 };
 
 const Timeline = () => {

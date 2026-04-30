@@ -17,12 +17,22 @@ import Terraform from "../assets/icons/icons8-terraform.svg";
 import Docker from "../assets/icons/icons8-docker.svg";
 
 import Reactt from "../assets/icons/icons8-react.svg";
+import ReactNative from "../assets/icons/icons8-react-native.svg";
 import ROR from "../assets/icons/icons8-ruby-on-rails.svg";
 import Flask from "../assets/icons/icons8-flask.svg";
+import Tailwind from "../assets/icons/icons8-tailwind-css.svg";
+import Redux from "../assets/icons/icons8-redux.svg";
+import Expo from "../assets/icons/icons8-expo.svg";
+import DotNet from "../assets/icons/icons8-.net.svg";
 
 import Firebase from "../assets/icons/icons8-firebase.svg";
 import Git from "../assets/icons/icons8-git.svg";
 import Github from "../assets/icons/icons8-github.svg";
+import Sentry from "../assets/icons/icons8-sentry.png";
+import NewRelic from "../assets/icons/new-relic.png";
+import Jest from "../assets/icons/icons8-jest.png";
+import Playwright from "../assets/icons/playwright.svg";
+import Claude from "../assets/icons/icons8-claude.png";
 
 const tools = [
 	{
@@ -56,14 +66,54 @@ const tools = [
 				name: "Firebase",
 				Icon: Firebase,
 			},
+			{
+				name: "Sentry",
+				Icon: Sentry,
+			},
+			{
+				name: "New Relic",
+				Icon: NewRelic,
+			},
+			{
+				name: "Jest",
+				Icon: Jest,
+			},
+			{
+				name: "Playwright",
+				Icon: Playwright,
+			},
+			{
+				name: "Claude",
+				Icon: Claude,
+			},
 		],
 	},
 	{
 		type: "frameworks",
 		icons: [
 			{
-				name: "React/React Native",
+				name: "React",
 				Icon: Reactt,
+			},
+			{
+				name: "React Native",
+				Icon: ReactNative,
+			},
+			{
+				name: "Tailwind CSS",
+				Icon: Tailwind,
+			},
+			{
+				name: "Redux",
+				Icon: Redux,
+			},
+			{
+				name: "Expo",
+				Icon: Expo,
+			},
+			{
+				name: ".NET",
+				Icon: DotNet,
 			},
 			{
 				name: "Ruby On Rails",
