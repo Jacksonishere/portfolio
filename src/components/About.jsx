@@ -104,7 +104,7 @@ const About = () => {
 			initial="offscreen"
 			whileInView="onscreen"
 			variants={OffScreenVar}
-			viewport={{ once: true, amount: 0.4 }}
+			viewport={{ once: true, amount: 0.05 }}
 			data-scroll-id="about"
 			className="bg-bg_color">
 			<div className="container mx-auto pt-[1.5rem] pb-[4.5rem] font-normal text-white text-[clamp(.9375rem,_2.4vw,_1.09375rem)] md:text-[clamp(1rem,_1.5vw,_1.075rem)] md:leading-[1.45rem]">
@@ -141,12 +141,8 @@ const AboutMeList = (props) => {
 	useEffect(() => {
 		scroll?.update();
 	}, [isMd]);
-	return (
-		<div
-			data-scroll
-			data-scroll-sticky
-			data-scroll-target="#sticky"
-			className="sticky mb-[3em] md:basis-[35%] md:max-w-[21rem]">
+	const inner = (
+		<>
 			<div className="mt-[clamp(4rem,_11vw,_4em)] lg:mt-[clamp(4rem,_10vw,_5.5rem)] w-full mx-auto aspect-square rounded-full overflow-hidden">
 				<img
 					className="w-full h-full object-cover object-[center_65%] scale-[1] md:scale-[1.15]"
@@ -155,26 +151,22 @@ const AboutMeList = (props) => {
 				/>
 			</div>
 			{props.children}
-		</div>
+		</>
 	);
-	// return isMd ? (
-	// 	<div
-	// 		data-scroll
-	// 		data-scroll-sticky
-	// 		data-scroll-target="#sticky"
-	// 		className="sticky mb-[3em] md:basis-[35%] md:max-w-[21rem]">
-	// 		<div className="mt-[clamp(4rem,_11vw,_4em)] lg:mt-[clamp(4rem,_10vw,_5.5rem)] w-full mx-auto aspect-square rounded-full overflow-hidden">
-	// 			<img
-	// 				className="w-full h-full object-cover object-[center_65%] scale-[1.15]"
-	// 				src="https://xxcedwfnr0gw43oa.public.blob.vercel-storage.com/myself.jpg"
-	// 				alt=""
-	// 			/>
-	// 		</div>
-	// 		{props.children}
-	// 	</div>
-	// ) : (
-	// 	<div className="sticky mb-[3em]">{props.children}</div>
-	// );
+
+	if (isMd) {
+		return (
+			<div
+				data-scroll
+				data-scroll-sticky
+				data-scroll-target="#sticky"
+				className="sticky mb-[3em] md:basis-[35%] md:max-w-[21rem]">
+				{inner}
+			</div>
+		);
+	}
+
+	return <div className="mb-[3em]">{inner}</div>;
 };
 
 const Timeline = () => {
